@@ -17,12 +17,24 @@ export type Product = {
 type GlobalContextType = {
   products: Product[];
   addProduct: (product: Product) => void;
+  step: string;
+  setStep: (step: string) => void;
+  productTitle: string;
+  setProductTitle: (productTitle: string) => void;
+  navVersion: string;
+  setNavVersion: (navVersion: string) => void;
 };
 
 // Initialize the global context with an empty array and a no-op function
 const GlobalContext = React.createContext<GlobalContextType>({
   products: [],
-  addProduct: () => {}, // No-op function
+  addProduct: () => {},
+  step: "",
+  setStep: () => {},
+  productTitle: "",
+  setProductTitle: () => {},
+  navVersion: "",
+  setNavVersion: () => {},
 });
 
 export function GlobalProvider({ children }: { children: React.ReactNode }) {
@@ -48,11 +60,23 @@ export function GlobalProvider({ children }: { children: React.ReactNode }) {
     setProducts((prevProducts) => [...prevProducts, product]);
   };
 
+  const [step, setStep] = React.useState<string>("create");
+
+  const [productTitle, setProductTitle] = React.useState<string>("");
+
+  const [navVersion, setNavVersion] = React.useState<string>("b");
+
   return (
     <GlobalContext.Provider
       value={{
         products,
         addProduct,
+        step,
+        setStep,
+        productTitle,
+        setProductTitle,
+        navVersion,
+        setNavVersion,
       }}
     >
       {children}

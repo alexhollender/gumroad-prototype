@@ -14,7 +14,7 @@ const Products = () => {
   return (
     <>
       <GlobalHeader />
-      <main className="mt-14">
+      <main className="my-14">
         <header className="flex flex-col gap-y-4 py-4 px-4">
           <div className="grid grid-cols-2 gap-2">
             <Button type={["btn-secondary-g"]} icon="search" />

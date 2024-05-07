@@ -44,6 +44,11 @@ body {
 .btn.btn-flush + .btn.btn-flush {
   border-left: 1px solid black;
 }
+.btn-icon {
+  width: 62px;
+  min-width: 62px;
+  max-width: 62px;
+}
 
 /* Misc */
 .hide-scroll::-webkit-scrollbar {

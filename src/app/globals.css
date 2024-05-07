@@ -3,27 +3,72 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --bg-body: #f4f4f0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--bg-body);
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.25rem;
+}
+.btn-primary {
+  background-color: #ff90e8;
+  color: #000000;
+}
+.btn-secondary-b {
+  background-color: #000000;
+  color: #ffffff;
+}
+.btn-secondary-g {
+  background-color: #f4f4f0;
+  color: #000000;
+}
+.btn-secondary-w {
+  background-color: #ffffff;
+  color: #000000;
+}
+.btn.btn-flush {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+.btn.btn-flush + .btn.btn-flush {
+  border-left: 1px solid black;
+}
+
+/* Misc */
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.overflow-fade {
+  position: relative;
+}
+
+.overflow-fade::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #f4f4f0);
 }
 
 @layer utilities {

@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import { StaticImageData } from "next/image";
 import stream from "../public/images/stream.png";
@@ -64,7 +63,7 @@ export function GlobalProvider({ children }: { children: React.ReactNode }) {
   const [productTitle, setProductTitle] = React.useState<string>("");
 
   const [navVersion, setNavVersion] = React.useState<string>(() => {
-    return localStorage.getItem("navVersion") || "a";
+    return window?.localStorage?.getItem("navVersion") || "a";
   });
 
   React.useEffect(() => {

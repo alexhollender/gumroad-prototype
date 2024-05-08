@@ -31,7 +31,7 @@ const NewProductHeaderB: React.FC<NewProductHeaderProps> = ({
           )}
         </div>
       </header>
-      <div className="p-4">
+      <div className="p-2 mb-2 border-b border-gray-400">
         {step === "create" && (
           <div className="grid grid-cols-2 gap-2">
             <LinkButton

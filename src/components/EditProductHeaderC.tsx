@@ -22,11 +22,11 @@ const EditProductHeaderC = () => {
           </h1>
         </div>
       </header>
-      <div className="p-4 fixed bottom-0 z-10 bg-background border-t border-black w-full">
+      <div className="p-2 fixed bottom-0 z-10 bg-background border-t border-gray-400 w-full">
         <div className="flex gap-2">
           <Button classes={["btn-secondary-w", "btn-icon"]} icon="link" />
           <Button classes={["btn-secondary-w"]} label="Unpublish" />
-          <Button classes={["btn-primary"]} label="Save" />
+          <Button classes={["btn-primary", "flex-1"]} label="Save" />
         </div>
       </div>
     </div>

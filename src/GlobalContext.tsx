@@ -63,7 +63,7 @@ export function GlobalProvider({ children }: { children: React.ReactNode }) {
 
   const [productTitle, setProductTitle] = React.useState<string>("");
 
-  const [navVersion, setNavVersion] = React.useState<string>("b");
+  const [navVersion, setNavVersion] = React.useState<string>("c");
 
   return (
     <GlobalContext.Provider

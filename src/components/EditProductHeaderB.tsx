@@ -22,7 +22,7 @@ const EditProductHeaderB = () => {
           </p>
         </div>
       </header>
-      <div className="p-4">
+      <div className="p-2 mb-2 border-b border-gray-400">
         <div className="flex gap-2">
           <Button classes={["btn-secondary-w", "btn-icon"]} icon="link" />
           <Button classes={["btn-secondary-w"]} label="Unpublish" />

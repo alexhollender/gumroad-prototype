@@ -9,6 +9,7 @@ import TabGroup from "@/components/TabGroup";
 import ProductStep from "@/components/ProductStep";
 import ContentStep from "@/components/ContentStep";
 import ShareStep from "@/components/ShareStep";
+import NavVersionControl from "@/components/NavVersionControl";
 
 const Products = () => {
   const [activeTab, setActiveTab] = React.useState<string>("product");
@@ -59,6 +60,7 @@ const Products = () => {
           </>
         )}
       </main>
+      <NavVersionControl />
     </>
   );
 };

@@ -1,5 +1,4 @@
 import * as GlobalContext from "@/GlobalContext";
-import NavVersionControl from "@/components/NavVersionControl";
 
 export default function ProductLayout({
   children,
@@ -8,10 +7,7 @@ export default function ProductLayout({
 }>) {
   return (
     <GlobalContext.GlobalProvider>
-      <>
-        {children}
-        <NavVersionControl />
-      </>
+      <>{children}</>
     </GlobalContext.GlobalProvider>
   );
 }

@@ -64,10 +64,6 @@ export function GlobalProvider({ children }: { children: React.ReactNode }) {
 
   const [navVersion, setNavVersion] = React.useState<string>("a");
 
-  React.useEffect(() => {
-    localStorage.setItem("navVersion", navVersion);
-  }, [navVersion]);
-
   return (
     <GlobalContext.Provider
       value={{

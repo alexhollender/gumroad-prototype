@@ -8,6 +8,7 @@ import TabGroup from "@/components/TabGroup";
 import ProductStep from "@/components/ProductStep";
 import ContentStep from "@/components/ContentStep";
 import ShareStep from "@/components/ShareStep";
+import NavVersionControl from "@/components/NavVersionControl";
 
 const Page = ({ params }: { params: { id: string } }) => {
   const [activeTab, setActiveTab] = React.useState<string>("product");
@@ -61,6 +62,7 @@ const Page = ({ params }: { params: { id: string } }) => {
           </section>
         </>
       </main>
+      <NavVersionControl />
     </>
   );
 };

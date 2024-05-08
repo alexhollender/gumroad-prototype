@@ -22,6 +22,19 @@ const NavVersionControl = () => {
     },
   ];
 
+  React.useEffect(() => {
+    if (localStorage.navVersion) {
+      setNavVersion(localStorage.navVersion);
+    }
+  }, []);
+
+  const handleClick = (version: string) => {
+    setNavVersion(version);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("navVersion", version);
+    }
+  };
+
   return (
     <div className="fixed z-20 left-0 bottom-16">
       {!showMenu && (
@@ -42,7 +55,7 @@ const NavVersionControl = () => {
             {options.map((option) => (
               <button
                 key={option._id}
-                onClick={() => setNavVersion(option._id)}
+                onClick={() => handleClick(option._id)}
                 className={`px-4 py-2 border rounded-full bg-white whitespace-nowrap ${
                   navVersion === option._id
                     ? "border-black"

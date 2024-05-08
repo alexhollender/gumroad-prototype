@@ -2,8 +2,13 @@
 import * as GlobalContext from "@/GlobalContext";
 import Image from "next/image";
 import productStep from "../../public/images/productStep.png";
+import productStepEdit from "../../public/images/productStepEdit.png";
 
-const ProductStep = () => {
+type ProductStepProps = {
+  edit?: boolean;
+};
+
+const ProductStep: React.FC<ProductStepProps> = ({ edit }) => {
   const { productTitle, setProductTitle } = GlobalContext.useGlobalContext();
 
   return (
@@ -28,7 +33,10 @@ const ProductStep = () => {
         <label htmlFor="products" className="block pb-2 font-bold">
           Description
         </label>
-        <Image src={productStep} alt="product selection" />
+        <Image
+          src={edit ? productStepEdit : productStep}
+          alt="product selection"
+        />
       </div>
     </>
   );

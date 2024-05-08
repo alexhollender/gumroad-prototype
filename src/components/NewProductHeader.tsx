@@ -14,7 +14,7 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
   const { step, productTitle } = GlobalContext.useGlobalContext();
 
   return (
-    <header className="grid grid-cols-[auto_1fr_auto] pl-4 bg-white fixed z-10 w-full top-0 border-y border-black">
+    <header className="grid grid-cols-[auto_1fr_auto] pl-4 bg-white fixed z-10 w-full overflow-hidden top-0 border-y border-black">
       <a
         href="/products"
         className="flex justify-start py-3 w-12 border-r border-black"

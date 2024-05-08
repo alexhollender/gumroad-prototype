@@ -15,17 +15,19 @@ const NewProductHeaderC: React.FC<NewProductHeaderProps> = ({
 
   return (
     <div className="bg-background">
-      <header className="grid grid-cols-[auto_1fr_auto] pl-4 bg-white w-full border-y border-black">
+      <header className="grid grid-cols-[auto_1fr_auto] pl-4 bg-white w-full overflow-hidden border-y border-black">
         <a
           href="/products"
           className="flex justify-start py-3 w-12 border-r border-black"
         >
           <Image src={close} alt="Gumroad logo" width={30} height={30} />
         </a>
-        <div className="flex items-center pl-4 font-bold">
+        <div className="flex items-center pl-4 font-bold overflow-hidden mr-2">
           {step === "create" && <p>What are you creating?</p>}
           {step !== "create" && (
-            <p>{productTitle.length > 0 ? productTitle : "Untitled product"}</p>
+            <h1 className="whitespace-nowrap text-ellipsis overflow-hidden">
+              {productTitle.length > 0 ? productTitle : "Untitled product"}
+            </h1>
           )}
         </div>
       </header>

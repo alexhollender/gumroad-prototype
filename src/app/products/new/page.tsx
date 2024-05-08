@@ -24,7 +24,7 @@ const Products = () => {
       <main className={`mb-16 ${navVersion === "a" && "mt-14"}`}>
         {navVersion === "a" && (
           <header className="py-3 px-4 border-b border-black">
-            <h1 className="font-bold">
+            <h1 className="font-bold overflow-hidden whitespace-nowrap text-ellipsis">
               {step === "create"
                 ? "What are you creating?"
                 : productTitle.length > 0

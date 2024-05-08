@@ -13,7 +13,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div className="bg-white rounded border border-black pt-3 [&>section]:px-3">
-      <section className="flex gap-x-4 pb-2">
+      <section className="flex gap-x-4 pb-2 relative">
         <Image
           src={image ? image : placeholder}
           alt={title}
@@ -23,11 +23,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <h3 className="clamp-2">{title}</h3>
           <Link
             href={`ah1989.gumroad.com/${_id}`}
-            className="text-sm underline"
+            className="text-sm underline relative z-10"
           >
             ah1989.gumroad.com/{_id}
           </Link>
         </div>
+        <a
+          href={`/products/edit/${_id}`}
+          className="absolute -top-3 left-0 w-full z-0 h-[calc(100%+0.75rem)]"
+        ></a>
       </section>
       <section className="flex text-center border-t border-black [&>div]:py-2 [&>div]:flex-1">
         <div className="border-r border-black">

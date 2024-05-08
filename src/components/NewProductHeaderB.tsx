@@ -33,12 +33,16 @@ const NewProductHeaderB: React.FC<NewProductHeaderProps> = ({
         {step === "create" && (
           <div className="grid grid-cols-2 gap-2">
             <LinkButton
-              type={["btn-secondary-w"]}
+              classes={["btn-secondary-w"]}
               label="Cancel"
               url="/products"
             />
             <Button
-              type={["btn-primary"]}
+              classes={
+                productTitle.length < 1
+                  ? ["btn-primary", "opacity-50", "pointer-events-none"]
+                  : ["btn-primary"]
+              }
               label="Next: Customize"
               nextStep="product"
               setActiveTab={setActiveTab}
@@ -48,7 +52,7 @@ const NewProductHeaderB: React.FC<NewProductHeaderProps> = ({
         {step === "product" && (
           <>
             <Button
-              type={["btn-primary"]}
+              classes={["btn-primary"]}
               label="Save and continue"
               nextStep="content"
               setActiveTab={setActiveTab}
@@ -57,9 +61,9 @@ const NewProductHeaderB: React.FC<NewProductHeaderProps> = ({
         )}
         {step === "content" && (
           <div className="grid grid-cols-2 gap-2">
-            <Button type={["btn-secondary-w"]} label="Save" />
+            <Button classes={["btn-secondary-w"]} label="Save" />
             <Button
-              type={["btn-primary"]}
+              classes={["btn-primary"]}
               label="Publish"
               nextStep="share"
               setActiveTab={setActiveTab}
@@ -68,9 +72,9 @@ const NewProductHeaderB: React.FC<NewProductHeaderProps> = ({
         )}
         {step === "share" && (
           <div className="flex gap-2">
-            <Button type={["btn-secondary-w", "btn-icon"]} icon="link" />
-            <Button type={["btn-secondary-w"]} label="Unpublish" />
-            <Button type={["btn-primary"]} label="Save" />
+            <Button classes={["btn-secondary-w", "btn-icon"]} icon="link" />
+            <Button classes={["btn-secondary-w"]} label="Unpublish" />
+            <Button classes={["btn-primary"]} label="Save" />
           </div>
         )}
       </div>

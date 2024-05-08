@@ -3,9 +3,10 @@ import * as GlobalContext from "@/GlobalContext";
 import Image from "next/image";
 import search from "../../public/images/search.svg";
 import link from "../../public/images/link.svg";
+import placeholder from "../../public/images/placeholder.png";
 
 type ButtonProps = {
-  type: string[];
+  classes: string[];
   label?: string;
   icon?: any;
   nextStep?: string;
@@ -13,14 +14,15 @@ type ButtonProps = {
 };
 
 export const Button: React.FC<ButtonProps> = ({
-  type,
+  classes,
   label,
   icon,
   nextStep,
   setActiveTab,
 }) => {
-  const { step, setStep } = GlobalContext.useGlobalContext();
-  const classNames = ["btn", ...type].join(" ");
+  const { step, setStep, productTitle, addProduct } =
+    GlobalContext.useGlobalContext();
+  const classNames = ["btn", ...classes].join(" ");
 
   const handleClick = () => {
     if (nextStep && setActiveTab) {
@@ -43,22 +45,28 @@ export const Button: React.FC<ButtonProps> = ({
 };
 
 type LinkButtonProps = {
-  type: string[];
-  label: string;
+  classes: string[];
+  label?: string;
   url: string;
   icon?: string;
 };
 
 export const LinkButton: React.FC<LinkButtonProps> = ({
-  type,
+  classes,
   label,
   url,
   icon,
 }) => {
-  const classNames = ["btn", ...type].join(" ");
+  const classNames = ["btn", ...classes].join(" ");
   return (
     <a href={url} className={classNames}>
-      {label}
+      {label && label}
+      {icon === "search" && (
+        <Image src={search.src} alt="search icon" width={26} height={26} />
+      )}
+      {icon === "link" && (
+        <Image src={link.src} alt="link icon" width={26} height={26} />
+      )}
     </a>
   );
 };

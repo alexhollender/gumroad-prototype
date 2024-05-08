@@ -33,7 +33,7 @@ const TabGroup: React.FC<TabGroupProps> = ({
   }
 
   return (
-    <div className="flex gap-x-3 overflow-x-auto pb-1.5 hide-scroll [&>:last-child]:mr-5">
+    <div className="flex gap-x-2 overflow-x-auto pb-1.5 hide-scroll [&>:last-child]:mr-5">
       {tabs.map((tab) => (
         <button
           key={tab._id}

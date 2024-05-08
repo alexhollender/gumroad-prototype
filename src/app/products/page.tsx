@@ -17,9 +17,9 @@ const Products = () => {
       <main className="my-14">
         <header className="flex flex-col gap-y-4 py-4 px-4">
           <div className="grid grid-cols-2 gap-2">
-            <Button type={["btn-secondary-g"]} icon="search" />
+            <Button classes={["btn-secondary-g"]} icon="search" />
             <LinkButton
-              type={["btn-primary"]}
+              classes={["btn-primary"]}
               label="New product"
               url="/products/new"
             />
@@ -47,7 +47,7 @@ const Products = () => {
             </>
           )}
           {activeTab === "discover" && <span>Nothing here</span>}
-          {activeTab === "affiliated" && <span>...or here</span>}
+          {activeTab === "affiliated" && <span>...or here, but...</span>}
           {activeTab === "collabs" && (
             <span>
               “At night the cries of cats making love or fighting, their

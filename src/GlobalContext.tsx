@@ -55,7 +55,6 @@ export function GlobalProvider({ children }: { children: React.ReactNode }) {
     },
   ]);
 
-  // Function to add a new product to the products array
   const addProduct = (product: Product) => {
     setProducts((prevProducts) => [...prevProducts, product]);
   };
@@ -64,7 +63,7 @@ export function GlobalProvider({ children }: { children: React.ReactNode }) {
 
   const [productTitle, setProductTitle] = React.useState<string>("");
 
-  const [navVersion, setNavVersion] = React.useState<string>("b");
+  const [navVersion, setNavVersion] = React.useState<string>("c");
 
   return (
     <GlobalContext.Provider

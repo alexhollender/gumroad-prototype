@@ -13,17 +13,7 @@ import ShareStep from "@/components/ShareStep";
 const Products = () => {
   const [activeTab, setActiveTab] = React.useState("product");
 
-  const { step, addProduct, productTitle, navVersion } =
-    GlobalContext.useGlobalContext();
-
-  const addSampleProduct = () => {
-    addProduct({
-      _id: "new-product",
-      title: "New Product",
-      price: 25,
-      sales: 350,
-    });
-  };
+  const { step, productTitle, navVersion } = GlobalContext.useGlobalContext();
 
   return (
     <>

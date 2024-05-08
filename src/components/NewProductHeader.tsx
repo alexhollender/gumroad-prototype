@@ -11,7 +11,7 @@ type NewProductHeaderProps = {
 const NewProductHeader: React.FC<NewProductHeaderProps> = ({
   setActiveTab,
 }) => {
-  const { step } = GlobalContext.useGlobalContext();
+  const { step, productTitle } = GlobalContext.useGlobalContext();
 
   return (
     <header className="grid grid-cols-[auto_1fr_auto] pl-4 bg-white fixed z-10 w-full top-0 border-y border-black">
@@ -25,12 +25,21 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
         {step === "create" && (
           <>
             <LinkButton
-              type={["btn-secondary-w", "btn-flush"]}
+              classes={["btn-secondary-w", "btn-flush"]}
               label="Cancel"
               url="/products"
             />
             <Button
-              type={["btn-primary", "btn-flush"]}
+              classes={
+                productTitle.length < 1
+                  ? [
+                      "btn-primary",
+                      "btn-flush",
+                      "opacity-50",
+                      "pointer-events-none",
+                    ]
+                  : ["btn-primary", "btn-flush"]
+              }
               label="Next: Customize"
               nextStep="product"
               setActiveTab={setActiveTab}
@@ -40,7 +49,7 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
         {step === "product" && (
           <>
             <Button
-              type={["btn-primary", "btn-flush"]}
+              classes={["btn-primary", "btn-flush"]}
               label="Save and continue"
               nextStep="content"
               setActiveTab={setActiveTab}
@@ -49,9 +58,9 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
         )}
         {step === "content" && (
           <>
-            <Button type={["btn-secondary-w", "btn-flush"]} label="Save" />
+            <Button classes={["btn-secondary-w", "btn-flush"]} label="Save" />
             <Button
-              type={["btn-primary", "btn-flush"]}
+              classes={["btn-primary", "btn-flush"]}
               label="Publish"
               nextStep="share"
               setActiveTab={setActiveTab}
@@ -61,11 +70,14 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
         {step === "share" && (
           <>
             <Button
-              type={["btn-secondary-w", "btn-flush", "btn-icon"]}
+              classes={["btn-secondary-w", "btn-flush", "btn-icon"]}
               icon="link"
             />
-            <Button type={["btn-secondary-w", "btn-flush"]} label="Unpublish" />
-            <Button type={["btn-primary", "btn-flush"]} label="Save" />
+            <Button
+              classes={["btn-secondary-w", "btn-flush"]}
+              label="Unpublish"
+            />
+            <Button classes={["btn-primary", "btn-flush"]} label="Save" />
           </>
         )}
       </div>

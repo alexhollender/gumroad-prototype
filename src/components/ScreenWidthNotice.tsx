@@ -6,7 +6,9 @@ const ScreenWidthNotice = () => {
     <div className="w-screen h-screen flex flex-col justify-center items-center gap-y-10 bg-black">
       <Image src={logo} alt="Gumroad logo" />
       <h1 className="text-xl pb-3 text-brand text-center px-10">
-        This prototype is intended for mobile devices
+        Make your screen smaller
+        <br />
+        (this prototype is intended for mobile devices)
       </h1>
     </div>
   );

@@ -62,9 +62,7 @@ export function GlobalProvider({ children }: { children: React.ReactNode }) {
 
   const [productTitle, setProductTitle] = React.useState<string>("");
 
-  const [navVersion, setNavVersion] = React.useState<string>(() => {
-    return window?.localStorage?.getItem("navVersion") || "a";
-  });
+  const [navVersion, setNavVersion] = React.useState<string>("a");
 
   React.useEffect(() => {
     localStorage.setItem("navVersion", navVersion);

@@ -8,6 +8,7 @@
 
 body {
   background-color: var(--bg-body);
+  font-family: "MabryPro", "Inter", sans-serif;
 }
 
 /* Buttons */
@@ -82,4 +83,25 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@font-face {
+  font-family: MabryPro;
+  src: url(../../public/fonts/MabryPro.woff2);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: MabryPro;
+  src: url(../../public/fonts/MabryPro_Italic.woff2);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: MabryPro;
+  src: url(../../public/fonts/MabryPro_Bold.woff2);
+  font-weight: 700;
+  font-style: normal;
 }

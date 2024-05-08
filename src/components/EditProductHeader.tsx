@@ -18,7 +18,7 @@ const EditProductHeader = () => {
           icon="link"
         />
         <Button classes={["btn-secondary-w", "btn-flush"]} label="Unpublish" />
-        <Button classes={["btn-primary", "btn-flush"]} label="Save" />
+        <Button classes={["btn-primary", "btn-flush", "flex-1"]} label="Save" />
       </div>
     </header>
   );

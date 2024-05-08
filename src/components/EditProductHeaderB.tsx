@@ -26,7 +26,7 @@ const EditProductHeaderB = () => {
         <div className="flex gap-2">
           <Button classes={["btn-secondary-w", "btn-icon"]} icon="link" />
           <Button classes={["btn-secondary-w"]} label="Unpublish" />
-          <Button classes={["btn-primary"]} label="Save" />
+          <Button classes={["btn-primary", "flex-1"]} label="Save" />
         </div>
       </div>
     </div>

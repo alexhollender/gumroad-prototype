@@ -3,7 +3,6 @@ import * as GlobalContext from "@/GlobalContext";
 import Image from "next/image";
 import search from "../../public/images/search.svg";
 import link from "../../public/images/link.svg";
-import placeholder from "../../public/images/placeholder.png";
 
 type ButtonProps = {
   classes: string[];
@@ -28,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
     if (nextStep && setActiveTab) {
       setStep(nextStep);
       setActiveTab(nextStep);
+      window.scrollTo({ top: 0 });
     }
   };
 

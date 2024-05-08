@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           alt={title}
           className="w-20 h-20"
         />
-        <div className="flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-2 overflow-auto">
           <h3 className="clamp-2">{title}</h3>
           <Link
             href={`ah1989.gumroad.com/${_id}`}

@@ -37,8 +37,9 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
                       "btn-flush",
                       "opacity-50",
                       "pointer-events-none",
+                      "flex-1",
                     ]
-                  : ["btn-primary", "btn-flush"]
+                  : ["btn-primary", "btn-flush", "flex-1"]
               }
               label="Next: Customize"
               nextStep="product"
@@ -49,7 +50,7 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
         {step === "product" && (
           <>
             <Button
-              classes={["btn-primary", "btn-flush"]}
+              classes={["btn-primary", "btn-flush", "flex-1"]}
               label="Save and continue"
               nextStep="content"
               setActiveTab={setActiveTab}
@@ -58,9 +59,12 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
         )}
         {step === "content" && (
           <>
-            <Button classes={["btn-secondary-w", "btn-flush"]} label="Save" />
             <Button
-              classes={["btn-primary", "btn-flush"]}
+              classes={["btn-secondary-w", "btn-flush", "flex-1"]}
+              label="Save"
+            />
+            <Button
+              classes={["btn-primary", "btn-flush", "flex-1"]}
               label="Publish"
               nextStep="share"
               setActiveTab={setActiveTab}
@@ -77,7 +81,10 @@ const NewProductHeader: React.FC<NewProductHeaderProps> = ({
               classes={["btn-secondary-w", "btn-flush"]}
               label="Unpublish"
             />
-            <Button classes={["btn-primary", "btn-flush"]} label="Save" />
+            <Button
+              classes={["btn-primary", "btn-flush", "flex-1"]}
+              label="Save"
+            />
           </>
         )}
       </div>

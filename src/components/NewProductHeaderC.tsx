@@ -54,7 +54,7 @@ const NewProductHeaderC: React.FC<NewProductHeaderProps> = ({
         {step === "product" && (
           <>
             <Button
-              classes={["btn-primary"]}
+              classes={["btn-primary", "w-full"]}
               label="Save and continue"
               nextStep="content"
               setActiveTab={setActiveTab}
@@ -76,7 +76,7 @@ const NewProductHeaderC: React.FC<NewProductHeaderProps> = ({
           <div className="flex gap-2">
             <Button classes={["btn-secondary-w", "btn-icon"]} icon="link" />
             <Button classes={["btn-secondary-w"]} label="Unpublish" />
-            <Button classes={["btn-primary"]} label="Save" />
+            <Button classes={["btn-primary", "flex-1"]} label="Save" />
           </div>
         )}
       </div>

@@ -36,7 +36,11 @@ const Products = () => {
         {step === "create" && <CreateStep />}
         {step !== "create" && (
           <>
-            <div className="p-4 overflow-fade">
+            <div
+              className={`overflow-fade ${
+                navVersion !== "b" ? "p-4" : "px-4 pb-4"
+              }`}
+            >
               <TabGroup
                 tabs={[
                   { _id: "product" },

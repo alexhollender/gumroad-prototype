@@ -4,11 +4,12 @@ import Image from "next/image";
 import createStep from "../../public/images/createStep.png";
 
 const CreateStep = () => {
-  const { productTitle, setProductTitle } = GlobalContext.useGlobalContext();
+  const { productTitle, setProductTitle, navVersion } =
+    GlobalContext.useGlobalContext();
 
   return (
     <>
-      <div className="py-3 px-4">
+      <div className={navVersion !== "b" ? "py-3 px-4" : "pb-3 px-4"}>
         <p className="pb-2">
           Make some selections, fill in some boxes, and go live in minutes.
         </p>

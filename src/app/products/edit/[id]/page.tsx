@@ -10,7 +10,7 @@ import ContentStep from "@/components/ContentStep";
 import ShareStep from "@/components/ShareStep";
 
 const Page = ({ params }: { params: { id: string } }) => {
-  const [activeTab, setActiveTab] = React.useState("product");
+  const [activeTab, setActiveTab] = React.useState<string>("product");
 
   const { step, navVersion, productTitle, setProductTitle } =
     GlobalContext.useGlobalContext();

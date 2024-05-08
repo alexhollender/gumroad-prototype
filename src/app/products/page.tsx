@@ -7,7 +7,7 @@ import TabGroup from "@/components/TabGroup";
 import ProductCard from "@/components/ProductCard";
 
 const Products = () => {
-  const [activeTab, setActiveTab] = React.useState("all-products");
+  const [activeTab, setActiveTab] = React.useState<string>("all-products");
 
   const { products } = GlobalContext.useGlobalContext();
 

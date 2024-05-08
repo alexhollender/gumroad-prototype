@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import * as GlobalContext from "@/GlobalContext";
+import ScreenWidthNotice from "@/components/ScreenWidthNotice";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,9 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GlobalContext.GlobalProvider>
-        <body>{children}</body>
-      </GlobalContext.GlobalProvider>
+      <body>
+        <div className="md:hidden">{children}</div>
+        <div className="hidden md:block">
+          <ScreenWidthNotice />
+        </div>
+      </body>
     </html>
   );
 }

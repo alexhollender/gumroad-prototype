@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         background: "#f4f4f0",
+        brand: "#ff90e8",
       },
     },
   },
